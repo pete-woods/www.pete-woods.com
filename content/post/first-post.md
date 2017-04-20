@@ -3,7 +3,7 @@ title: I'm starting a blog, apparently
 date: 2010-09-22
 categories:
   - talk
-thumbnailImagePosition: left
+thumbnailImagePosition: right
 thumbnailImage: /img/start-journey-thumbnail.jpg
 ---
 

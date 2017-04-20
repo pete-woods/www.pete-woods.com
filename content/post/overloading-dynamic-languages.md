@@ -5,7 +5,7 @@ categories:
   - programming
 tags:
   - Ruby
-thumbnailImagePosition: left
+thumbnailImagePosition: right
 thumbnailImage: /img/overloaded-thumbnail.jpg
 ---
 

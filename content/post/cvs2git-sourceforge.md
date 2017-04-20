@@ -6,7 +6,7 @@ categories:
 tags:
   - Git
   - CVS
-thumbnailImagePosition: left
+thumbnailImagePosition: right
 thumbnailImage: /img/chrysalis-thumbnail.jpg
 ---
 
