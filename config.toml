@@ -4,7 +4,7 @@ defaultContentLanguage = "en-us"
 title = "Pete Woods' Blog"
 theme = "hugo-tranquilpeak-theme"
 #disqusShortname = "pete-woods"
-# googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-18858251-1"
 paginate = 7
 canonifyurls = true
 
