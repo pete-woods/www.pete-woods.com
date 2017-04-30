@@ -68,7 +68,7 @@ Please note, the above code is an example of how **not** to do things.
 
 # Smart pointers to the rescue!
 
-Since C++11, we have access to the `std::shared_ptr` and `std::unique_ptr` smart pointer classes. These classes allow you to managed the lifecycle of heap variables (i.e. created using `new`) without needing to explicitly call `delete`.
+Since C++11, we have access to the `std::shared_ptr` and `std::unique_ptr` smart pointer classes. These classes allow you to manage the lifecycle of heap variables (i.e. created using `new`) without needing to explicitly call `delete`.
 
 Although by default these smart pointers call `delete` on the owned object when they go out of scope, they also allow you to specify a custom deleter. This means we can bind the correct 'undef' method from glib as the deleter, and forget about cleaning up ourselves.
 
