@@ -18,8 +18,8 @@ canonifyurls = true
 
 [author]
   name = "Pete Woods"
-  bio = "Superstar Software Engineer"
-  job = "Software Engineer"
+  bio = "Passionate Software Engineer"
+  job = "Software Engineer at Canonical Ltd."
   location = "Lancaster, UK"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "email@pete-woods.com"
@@ -95,7 +95,7 @@ canonifyurls = true
   # dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
-  # keywords = ["development", "next-gen"]
+  keywords = ["development", "programming", "C++", "Java", "software engineering"]
 
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = true
