@@ -18,7 +18,7 @@ The basic steps are:
 
 Install wine: `apt-get install wine`, or `yum install wine`.
 
-Download the standalone version of TortoiseDiff from [Sourceforge](http://sourceforge.net/projects/tortoisesvn/files/Tools/) and extract `TortoiseMerge.exe` into ~/bin/.
+Download the standalone version of TortoiseDiff from [Sourceforge](https://sourceforge.net/projects/tortoisesvn/files/OldFiles/Tools/) and extract `TortoiseMerge.exe` into ~/bin/.
 
 Set up a new merge tool in your user configuration in Bazaar Explorer containing:
 
