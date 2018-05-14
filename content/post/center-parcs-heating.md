@@ -5,7 +5,7 @@ categories:
   - talk
 tags:
   - lpt
-thumbnailImagePosition: right
+thumbnailImagePosition: left
 thumbnailImage: /img/heating-controls-thumbnail.jpg
 ---
 

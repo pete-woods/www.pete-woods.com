@@ -10,7 +10,7 @@ tags:
   - Jenv
   - OSX
   - macOS
-thumbnailImagePosition: right
+thumbnailImagePosition: left
 thumbnailImage: /img/java-thumbnail.png
 ---
 
