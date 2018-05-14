@@ -1,0 +1,56 @@
+defaults: &defaults
+  working_directory: ~
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    docker:
+      - image: felicianotech/docker-hugo:latest
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
+      - run:
+          name: "Run Hugo"
+          command: HUGO_ENV=production hugo -v
+      #- run:
+      #    name: "Test Website"
+      #    command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
+      - persist_to_workspace:
+          root: .
+          paths:
+            - public
+            - deployment
+  deployment:
+    <<: *defaults
+    docker:
+      - image: circleci/python:latest
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache: # restores saved dependency cache if the Branch key template or requirements.txt files have not changed since the previous run
+          key: deps1-{{ .Branch }}-{{ checksum "deployment/requirements.txt" }}
+      - run: # install and activate virtual environment with pip
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r deployment/requirements.txt
+      - save_cache: # special step to save dependency cache
+          key: deps1-{{ .Branch }}-{{ checksum "deployment/requirements.txt" }}
+          paths:
+            - "venv"
+      - run: # Deploy
+          command: |
+            . venv/bin/activate
+            ansible-playbook deployment/playbook.yml
+
+workflows:
+  version: 2
+
+  btd:
+    jobs:
+      - build
+      - deployment:
+          requires:
+            - build

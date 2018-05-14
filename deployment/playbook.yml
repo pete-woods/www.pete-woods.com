@@ -25,6 +25,7 @@
     - name: Configure main site bucket for static hosting
       s3_website:
         name: "{{site_name}}"
+        region: "{{aws_region}}"
         state: present
         suffix: index.html
         error_key: 404.html
@@ -32,6 +33,7 @@
     - name: Sync main site bucket contents
       s3_sync:
         bucket: "{{site_name}}"
+        region: "{{aws_region}}"
         file_root: ../public/
 
     - name: Get Cloudfront facts if distribution was already present
@@ -62,11 +64,11 @@
       set_fact:
         cloudfront_distribution_id: "{{ cloudfront_facts.ansible_facts.cloudfront.keys() | list | first }}"
 
-    - name: Invalidate the cache for the CloudFront distribution
-      cloudfront_invalidation:
-        distribution_id: "{{cloudfront_distribution_id}}"
-        target_paths:
-          - /*
+    # - name: Invalidate the cache for the CloudFront distribution
+    #   cloudfront_invalidation:
+    #     distribution_id: "{{cloudfront_distribution_id}}"
+    #     target_paths:
+    #       - /*
 
     - name: Assign cloudfront result variable from facts
       set_fact:
@@ -98,6 +100,7 @@
     - name: Configure redirect bucket's redirects
       s3_website:
         name: "{{www_site_name}}"
+        region: "{{aws_region}}"
         state: present
         redirect_all_requests: "{{site_name}}"
 
