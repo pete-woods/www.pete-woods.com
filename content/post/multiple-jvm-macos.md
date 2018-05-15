@@ -11,7 +11,7 @@ tags:
   - OSX
   - macOS
 thumbnailImagePosition: left
-thumbnailImage: /img/java-thumbnail.png
+thumbnailImage: /images/coffee-thumbnail.jpg
 ---
 
 It's pretty common when doing Java development to need mutiple versions installed alongside each other.

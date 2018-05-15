@@ -7,7 +7,7 @@ tags:
   - Git
   - CVS
 thumbnailImagePosition: left
-thumbnailImage: /img/chrysalis-thumbnail.jpg
+thumbnailImage: /images/chrysalis-thumbnail.jpg
 ---
 
 Here's a script I came up with to extract any project's CVS repository from Sourceforge and convert it into a Git repository. To run it you'll need Git and Subversion installed on your machine.

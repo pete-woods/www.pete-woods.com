@@ -7,7 +7,7 @@ tags:
   - Java
   - Eclipse
 thumbnailImagePosition: left
-thumbnailImage: /img/crash-thumbnail.jpg
+thumbnailImage: /images/crash-thumbnail.jpg
 ---
 
 If you're currently executing your target platform that you build your product from instead of a properly installed Eclipse, you will have troubles when you upgrade. Eclipse 3.5 and above don't count plug-ins as installed by simply unzipping - the configuration meta data must refer to them. The best way is to download a complete Eclipse and unzip this somewhere on your build server, instead of assembling it from components at build time. Guess we should have been doing this all along.

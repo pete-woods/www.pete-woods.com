@@ -6,7 +6,7 @@ categories:
 tags:
   - Ruby
 thumbnailImagePosition: left
-thumbnailImage: /img/overloaded-thumbnail.jpg
+thumbnailImage: /images/overloaded-thumbnail.jpg
 ---
 
 Over the last few years I have become a much bigger fan of dynamic languages like Ruby and Python. Today I was thinking about one of my old gripes about dynamic languages, which was a lack of method overloading.

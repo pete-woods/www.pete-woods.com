@@ -7,7 +7,7 @@ tags:
   - Bzr
   - TortoiseMerge
 thumbnailImagePosition: left
-thumbnailImage: /img/wine-thumbnail.jpg
+thumbnailImage: /images/wine-thumbnail.jpg
 ---
 
 Having tried to fall in love with Meld and KDiff3, I've eventually gone back to my favourite merge tool, TortoiseMerge. It's actually very straightforward to get running on Linux.

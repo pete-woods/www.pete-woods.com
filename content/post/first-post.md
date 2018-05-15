@@ -4,7 +4,7 @@ date: 2010-09-22
 categories:
   - talk
 thumbnailImagePosition: left
-thumbnailImage: /img/start-journey-thumbnail.jpg
+thumbnailImage: /images/start-journey-thumbnail.jpg
 ---
 
 I'm an IT consultant. I do my best to not be like a "typical" consultant, and really care about the code I create and the product I deliver to my customer. To do this I'm trying to drive the adoption of "Continuous Delivery" within my company. Basically we're talking about test driven development, test automation, continuous integration, continuous deployment, continuos refactoring and all that sort of thing.

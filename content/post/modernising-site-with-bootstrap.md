@@ -8,7 +8,7 @@ tags:
   - css
   - html
 thumbnailImagePosition: left
-thumbnailImage: /img/bootstrap-stack-thumbnail.png
+thumbnailImage: /images/boots-thumbnail.jpg
 ---
 
 I was recently given the task of modernising a simple internal site's front-end. It was built using plain hand-written
@@ -50,7 +50,7 @@ body {
 
 You can see the complete login page below, making use of this backgroud image.
 
-{{< image classes="clear fancybox fig-100" src="/img/loc/login-new.png" thumbnail="/img/loc/login-new-thumbnail.png" title="New login screen">}}
+{{< image classes="clear fancybox fig-100" src="/images/loc/login-new.png" thumbnail="/images/loc/login-new-thumbnail.png" title="New login screen">}}
 
 The old front end used HTTP BASIC authentication, so there was no login screen. The new site
 is based on Spring, using [Spring Security's](Find URL) CSRF protection. Therefore we need to
@@ -160,8 +160,8 @@ switching to Bootstrap-themed [tables](https://getbootstrap.com/docs/4.0/content
 </table>
 {{< /codeblock >}}
 
-{{< image classes="fancybox fig-50" src="/img/loc/home-old.png" thumbnail="/img/loc/home-old-thumbnail.png" title="Old home screen" >}}
-{{< image classes="clear fancybox fig-50" src="/img/loc/home-new.png" thumbnail="/img/loc/home-new-thumbnail.png" title="New home screen" >}}
+{{< image classes="fancybox fig-50" src="/images/loc/home-old.png" thumbnail="/images/loc/home-old-thumbnail.png" title="Old home screen" >}}
+{{< image classes="clear fancybox fig-50" src="/images/loc/home-new.png" thumbnail="/images/loc/home-new-thumbnail.png" title="New home screen" >}}
 
 
 # Timesheet screen
@@ -170,14 +170,14 @@ The old timesheets screen didn't respond well to changes in viewport size. Some 
 the table on small screens, for example. In addition to fixing the complex table-based layouts, I employed a few different
 tricks to simplify and clean up the layout of this screen.
 
-{{< image classes="fancybox fig-50" src="/img/loc/timesheets-old.png" thumbnail="/img/loc/timesheets-old-thumbnail.png" title="Old timesheet screen" >}}
-{{< image classes="clear fancybox fig-50" src="/img/loc/timesheets-new.png" thumbnail="/img/loc/timesheets-new-thumbnail.png" title="New timesheet screen" >}}
+{{< image classes="fancybox fig-50" src="/images/loc/timesheets-old.png" thumbnail="/images/loc/timesheets-old-thumbnail.png" title="Old timesheet screen" >}}
+{{< image classes="clear fancybox fig-50" src="/images/loc/timesheets-new.png" thumbnail="/images/loc/timesheets-new-thumbnail.png" title="New timesheet screen" >}}
 
 * Move the timestamps into a tool-tip.
 * Collapse the row of buttons for each row into a small Bootstrap drop-down button group.
 * Hide infrequently-used parts of the UI (manual time sheet upload) behind a modal dialog.
 
-{{< image classes="clear fancybox fig-100" src="/img/loc/upload-new.png" thumbnail="/img/loc/upload-new-thumbnail.png" title="Popup widget for infrequently-used manual upload">}}
+{{< image classes="clear fancybox fig-100" src="/images/loc/upload-new.png" thumbnail="/images/loc/upload-new-thumbnail.png" title="Popup widget for infrequently-used manual upload">}}
 
 # Responsive design
 
@@ -203,9 +203,9 @@ See lines 4 and 5, where by default (on a mobile sized screen) the columns are n
 visible again for certain breakpoints with the combination of e.g. `d-none d-sm-table-cell`. This results
 in the following layouts.
 
-{{< image classes="fancybox fig-33" src="/img/loc/login-responsive.png" thumbnail="/img/loc/login-responsive-thumbnail.png" title="Responsive login screen">}}
-{{< image classes="fancybox fig-33" src="/img/loc/home-responsive.png" thumbnail="/img/loc/home-responsive-thumbnail.png" title="Responsive home screen">}}
-{{< image classes="clear fancybox fig-33" src="/img/loc/timesheets-responsive.png" thumbnail="/img/loc/timesheets-responsive-thumbnail.png" title="Responsive timesheet screen">}}
+{{< image classes="fancybox fig-33" src="/images/loc/login-responsive.png" thumbnail="/images/loc/login-responsive-thumbnail.png" title="Responsive login screen">}}
+{{< image classes="fancybox fig-33" src="/images/loc/home-responsive.png" thumbnail="/images/loc/home-responsive-thumbnail.png" title="Responsive home screen">}}
+{{< image classes="clear fancybox fig-33" src="/images/loc/timesheets-responsive.png" thumbnail="/images/loc/timesheets-responsive-thumbnail.png" title="Responsive timesheet screen">}}
 
 # Search screen
 
@@ -214,8 +214,8 @@ The various serach screens in the app benefited from Bootstrap's
 these search screens is quite simple, but the improvement is significant. Again, the screens
 trivially become mobile-friendly because of Bootstrap.
 
-{{< image classes="fancybox fig-50" src="/img/loc/query-old.png" thumbnail="/img/loc/query-old-thumbnail.png" title="Old search screen" >}}
-{{< image classes="clear fancybox fig-50" src="/img/loc/query-new.png" thumbnail="/img/loc/query-new-thumbnail.png" title="New search screen" >}}
+{{< image classes="fancybox fig-50" src="/images/loc/query-old.png" thumbnail="/images/loc/query-old-thumbnail.png" title="Old search screen" >}}
+{{< image classes="clear fancybox fig-50" src="/images/loc/query-new.png" thumbnail="/images/loc/query-new-thumbnail.png" title="New search screen" >}}
 
 # Summary
 

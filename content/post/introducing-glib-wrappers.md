@@ -8,7 +8,7 @@ tags:
   - glib
   - gobject
 thumbnailImagePosition: left
-thumbnailImage: /img/potholes-thumbnail.jpg
+thumbnailImage: /images/potholes-thumbnail.jpg
 ---
 
 One part of doing C++ the right way is using automatic variables for everything you possibly can. However at some point in your C++ endeavours, you’re likely to be using a C API of some sort, with explicit method calls to manage lifecycles, which can make this more difficult. My work at Canonical has involved talking to lots of these sorts of APIs, many of them based on GNOME’s [Glib](https://github.com/GNOME/glib). To make life easier, I have created a set of [easy to use wrappers](https://github.com/pete-woods/unity-api/tree/master/include/unity/util) to manage the lifecycle Glib and GObject objects.
@@ -21,7 +21,7 @@ If you're used to modern languages that manage memory automatically, using these
 
 <p></p>
 
-{{< wide-image src="/img/potholes-wide.jpg" >}}
+{{< wide-image src="/images/potholes-wide.jpg" >}}
 
 # Doing it the hard way
 

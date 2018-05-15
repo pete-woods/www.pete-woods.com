@@ -10,7 +10,7 @@ tags:
   - testing
 autoThumbnailImage: false
 thumbnailImagePosition: "top"
-thumbnailImage: /img/bus-thumbnail.jpg
+thumbnailImage: /images/bus-thumbnail.jpg
 
 ---
 
