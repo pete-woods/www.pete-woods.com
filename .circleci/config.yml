@@ -21,29 +21,27 @@ jobs:
           root: .
           paths:
             - public
-            - deployment
+            - firebase.json
+            - .firebaserc
   deployment:
     <<: *defaults
     docker:
-      - image: circleci/python:latest
+      - image: circleci/node:latest
     steps:
       - attach_workspace:
           at: .
-      - restore_cache: # restores saved dependency cache if the Branch key template or requirements.txt files have not changed since the previous run
-          key: deps1-{{ .Branch }}-{{ checksum "deployment/requirements.txt" }}
-      - run: # install and activate virtual environment with pip
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r deployment/requirements.txt
-      - save_cache: # special step to save dependency cache
-          key: deps1-{{ .Branch }}-{{ checksum "deployment/requirements.txt" }}
+      - restore_cache: # special step to restore the dependency cache 
+          key: dependency-cache-firebase-tools
+      - run:
+          name: npm install firebase-tools
+          command: npm install firebase-tools
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-firebase-tools
           paths:
-            - "venv"
-      - run: # Deploy
-          command: |
-            . venv/bin/activate
-            ansible-playbook deployment/playbook.yml
+            - ./node_modules
+      - run:
+          name: Deploy to Firebase
+          command: ./node_modules/.bin/firebase deploy --token="$FIREBASE_DEPLOY_TOKEN"
 
 workflows:
   version: 2
