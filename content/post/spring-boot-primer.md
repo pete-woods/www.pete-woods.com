@@ -7,7 +7,7 @@ tags:
   - Java
   - Docker
 thumbnailImagePosition: left
-thumbnailImage: /images/spring-boot-logo-thumbnail.png
+thumbnailImage: /images/paint-primer-thumbnail.jpg
 ---
 
 Spring Boot is a very popular Java framework for creating standalone, production
@@ -50,7 +50,7 @@ how we actually build the application using Spring Boot.
   - QueryDSL
   - Auditing
 - Building a media server with `ResourceHttpRequestHandler`.
-- Using Spring Cloud AWS for S3
+  - Using Spring Cloud AWS for S3 storage.
 - Using Spring Cloud AWS with Spring Boot Actuator for putting metrics into CloudWatch.
 - Using Spring Session with Redis for Spring Security authentication state.
   - Configuration to support AWS ElastiCache.
