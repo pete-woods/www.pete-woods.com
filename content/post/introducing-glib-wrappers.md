@@ -2,7 +2,7 @@
 title: C++ Glib/GObject wrappers
 date: 2017-04-20
 categories:
-  - programming
+  - development
 tags:
   - C++
   - glib

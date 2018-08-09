@@ -2,7 +2,7 @@
 title: Testing Qt-based DBus services
 date: 2017-04-20
 categories:
-  - programming
+  - development
 tags:
   - C++
   - Qt

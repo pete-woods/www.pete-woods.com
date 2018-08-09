@@ -2,10 +2,10 @@
 title: DRY principle with docker-compose
 date: 2018-08-09
 categories:
-  - programming
+  - devops
 tags:
   - Docker
-  - DevOps
+  - Spring-Boot-Primer
 thumbnailImagePosition: left
 thumbnailImage: /images/composing-thumbnail.jpg
 ---
@@ -15,6 +15,8 @@ An oft-repeated and sensible principle in software engineering is DRY, or
 files.
 
 <!--more-->
+
+This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
 
 # Intended audience
 

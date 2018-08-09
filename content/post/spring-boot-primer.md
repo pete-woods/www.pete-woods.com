@@ -2,10 +2,11 @@
 title: Spring Boot 2.0 primer
 date: 2018-08-08
 categories:
-  - programming
+  - series
 tags:
   - Java
   - Docker
+  - Spring-Boot-Primer
 thumbnailImagePosition: left
 thumbnailImage: /images/paint-primer-thumbnail.jpg
 ---
@@ -15,6 +16,8 @@ ready web applications. In this series of blog posts, we are going to walk throu
 Boot 2.0 to build and deploy a simple CRUD REST application.
 
 <!--more-->
+
+This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
 
 We're going to make use of modern Spring technologies such as [Spring Security Oauth2 JOSE](https://docs.spring.io/spring-security/site/docs/5.0.0.RELEASE/reference/htmlsingle/#spring-security-oauth2-jose),
 [Spring Cloud AWS](http://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html), and
@@ -33,7 +36,7 @@ The topics we're going to cover are listed below.
 We'll start by talking about how we orchestrate the development environment, to get us up
 and running with MariaDB and Redis effortlessly.
 
-- Building Docker image with Spotify's Dockerfile Maven plugin.
+- Building Docker image with Spotify's Dockerfile Maven plugin ([link]({{< relref "building-docker-images-with-maven.md" >}})).
 - Composing Docker compose.
 
 # Spring Boot

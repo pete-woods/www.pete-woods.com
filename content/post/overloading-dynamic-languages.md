@@ -2,7 +2,7 @@
 title: No overloading in dynamically typed languages makes sense
 date: 2012-05-03
 categories:
-  - programming
+  - development
 tags:
   - Ruby
 thumbnailImagePosition: left

@@ -2,7 +2,7 @@
 title: Unit testing in BASH is actually possible!
 date: 2011-12-15
 categories:
-  - programming
+  - development
 tags:
   - BASH
   - testing

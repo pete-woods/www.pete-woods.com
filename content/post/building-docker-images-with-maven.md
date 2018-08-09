@@ -2,11 +2,12 @@
 title: Building Docker images with Maven
 date: 2018-08-08
 categories:
-  - programming
+  - devops
 tags:
   - Java
   - Maven
   - Docker
+  - Spring-Boot-Primer
 thumbnailImagePosition: left
 thumbnailImage: /images/container-ship-thumbnail.jpg
 ---
@@ -16,6 +17,8 @@ build language for Docker images are `Dockerfile`s, so we will use
 [Spotify's Dockerfile Maven plugin](https://github.com/spotify/dockerfile-maven).
 
 <!--more-->
+
+This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
 
 To make packaging as simple as possible, we will bind the Maven plugin's
 build phases to the default build phases, so that when you type

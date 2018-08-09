@@ -2,7 +2,7 @@
 title: PDE build gotcha when upgrading from Eclipse 3.4 to 3.5
 date: 2010-09-24
 categories:
-  - programming
+  - development
 tags:
   - Java
   - Eclipse
