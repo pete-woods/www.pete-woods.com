@@ -36,8 +36,8 @@ The topics we're going to cover are listed below.
 We'll start by talking about how we orchestrate the development environment, to get us up
 and running with MariaDB and Redis effortlessly.
 
-- Building Docker image with Spotify's Dockerfile Maven plugin ([link]({{< relref "building-docker-images-with-maven.md" >}})).
-- Composing Docker compose.
+- Building Docker images with Spotify's Dockerfile Maven plugin ([link]({{< relref "building-docker-images-with-maven.md" >}})).
+- DRY principle with Docker compose ([link]({{< relref "composing-docker-compose-files.md" >}})).
 
 # Spring Boot
 
