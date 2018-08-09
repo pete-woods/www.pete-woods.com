@@ -30,7 +30,7 @@ need JDK 8+, and a [Docker installation](https://docs.docker.com/install/).
 First create the [Dockerfile](https://github.com/surevine/spring-rest-example/blob/master/Dockerfile)
 to construct our image, as below:
 
-{{< codeblock "Dockerfile" >}}
+{{< codeblock "Dockerfile" "Dockerfile" "https://github.com/surevine/spring-rest-example/blob/master/Dockerfile" >}}
 FROM openjdk:jre-alpine
 VOLUME /tmp
 ARG JAR_FILE
@@ -70,7 +70,7 @@ times.
 
 Now we need to add a pair of properties to configure the image builder:
 
-{{< codeblock "pom.xml" "xml" >}}
+{{< codeblock "pom.xml" "xml" "https://github.com/surevine/spring-rest-example/blob/master/pom.xml" >}}
 <properties>
   ...
   <dockerfile.version>1.4.1</dockerfile.version>
@@ -86,7 +86,7 @@ There are only two interesting parts to this:
 2. The `dependencies` section, which makes this plugin work against later versions of 
    the JDK.
 
-{{< codeblock "pom.xml" "xml" >}}
+{{< codeblock "pom.xml" "xml" "https://github.com/surevine/spring-rest-example/blob/master/pom.xml" >}}
 <plugins>
   ...
   <plugin>
