@@ -67,15 +67,9 @@ development, so we create a shared `docker-compose.yml` as follows:
 {{< codeblock "docker-compose.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose.yml" >}}
 version: '3.3'
 
-volumes:
-  db-data:
-    driver: local
-
 services:
   db:
     image: mariadb
-    volumes:
-      - db-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: 'backend'
       MYSQL_USER: 'backend'
@@ -97,16 +91,110 @@ services:
     command: ["--notify-keyspace-events", "Egx"]
 {{< /codeblock >}}
 
-The object at line 8 defines our MariaDB service. We are wiring up a volume (line 10),
-asking for a database and user to be created (lines 13 and 14), and asking for UTF8
-support to be enabled by default (lines 16 and 17).
+The object at line 4 defines our MariaDB service. We are asking for a database
+and user to be created (lines 7 and 8), and asking for UTF8
+support to be enabled by default (lines 10 and 11).
 
 # Development
 
+The development file needs to expose the ports for the database and cache so
+that a locally run version of the application can access them. It also wires
+a development-specific volume to the database service.
+
 {{< codeblock "docker-compose-development.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose-development.yml" >}}
+version: '3.3'
+
+volumes:
+  db-data-development:
+    driver: local
+
+services:
+  db:
+    volumes:
+      - db-data-development:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Uv6DFjqyBbGxGczOaQFCP8FnmOwP98FxNqxRezUZ5'
+      MYSQL_PASSWORD: 'XfeCEtSOFL91QpeyDxQnkRattHWzufTdDB1Pn5iB4'
+    ports:
+      - '3306:3306'
+
+  cache:
+    ports:
+      - '6379:6379'
 {{< /codeblock >}}
+
+## Running
+
+To run up the development environment:
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-development.yml up
+```
+
+Then start the Spring Boot application in your IDE, or with the command:
+```
+./mvnw spring-boot:run
+```
 
 # Production
 
+The production file needs to start the Spring Boot application as a service,
+and expose it outside of the Docker network. It also needs to connect a
+volume to the database, that won't get mixed up with the development version.
+
+We would also like to use different passwords for development and production.
+
 {{< codeblock "docker-compose-production.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose-production.yml" >}}
+version: '3.3'
+
+volumes:
+  backend-data:
+    driver: local
+  db-data-production:
+    driver: local
+
+services:
+  db:
+    volumes:
+      - db-data-production:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: '3773Ir5oYOPuIwiJ3yylytG5kvRhOUYQafAVkTNBE'
+      MYSQL_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
+
+  cache:
+
+  backend:
+    image: surevine/spring-rest-example:latest
+    volumes:
+      - backend-data:/var/lib/data
+    environment:
+      DB_VENDOR: 'mariadb'
+      DB_ADDR: 'db'
+      DB_NAME: 'backend'
+      DB_USER: 'backend'
+      DB_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
+      DB_DRIVER: 'org.mariadb.jdbc.Driver'
+      SESSION_HOST: 'cache'
+      SESSION_PASSWORD:
+      SESSION_PORT: 6379
+      MEDIA_LOCATION: 'file:/var/lib/data/'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+      - cache
 {{< /codeblock >}}
+
+## Running
+
+To run up the production environment, we first need to build the image:
+
+```
+./mvnw package
+```
+
+Then we can run `docker-compose`:
+
+```
+docker-compose -f docker-compose.yml -f docker-compose-production.yml up
+```
