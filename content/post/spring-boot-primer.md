@@ -1,6 +1,6 @@
 ---
 title: Spring Boot 2.0 primer
-date: 2018-08-09
+date: 2018-08-08
 categories:
   - programming
 tags:
