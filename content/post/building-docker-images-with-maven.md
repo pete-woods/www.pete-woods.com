@@ -1,6 +1,6 @@
 ---
 title: Building Docker images with Maven
-date: 2018-08-09
+date: 2018-08-08
 categories:
   - programming
 tags:
@@ -30,7 +30,7 @@ need JDK 8+, and a [Docker installation](https://docs.docker.com/install/).
 First create the [Dockerfile](https://github.com/surevine/spring-rest-example/blob/master/Dockerfile)
 to construct our image, as below:
 
-```dockerfile
+{{< codeblock "Dockerfile" >}}
 FROM openjdk:jre-alpine
 VOLUME /tmp
 ARG JAR_FILE
@@ -45,7 +45,7 @@ RUN addgroup bootapp && \
 WORKDIR /opt
 USER bootapp
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/opt/app.jar"]
-```
+{{< /codeblock >}}
 
 You can see that we are basing image on the official `openjdk:jre-alpine` image.
 This will give us the latest Java JRE release based on the Alpine Linux
@@ -70,14 +70,14 @@ times.
 
 Now we need to add a pair of properties to configure the image builder:
 
-```xml
+{{< codeblock "pom.xml" "xml" >}}
 <properties>
   ...
   <dockerfile.version>1.4.1</dockerfile.version>
   <docker.image.prefix>surevine</docker.image.prefix>
   ...
 </properties>
-```
+{{< /codeblock >}}
 
 In the `plugins` section, we also need to add the actual Dockerfile Maven plugin.
 There are only two interesting parts to this:
@@ -86,7 +86,7 @@ There are only two interesting parts to this:
 2. The `dependencies` section, which makes this plugin work against later versions of 
    the JDK.
 
-```xml
+{{< codeblock "pom.xml" "xml" >}}
 <plugins>
   ...
   <plugin>
@@ -120,7 +120,7 @@ There are only two interesting parts to this:
   </plugin>
   ...
 </plugins>
-```
+{{< /codeblock >}}
 
 # Building
 
