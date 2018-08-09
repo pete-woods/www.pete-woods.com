@@ -7,7 +7,7 @@ tags:
   - Java
   - Docker
 thumbnailImagePosition: left
-thumbnailImage: /images/start-journey-thumbnail.jpg
+thumbnailImage: /images/spring-boot-logo-thumbnail.png
 ---
 
 Spring Boot is a very popular Java framework for creating standalone, production
