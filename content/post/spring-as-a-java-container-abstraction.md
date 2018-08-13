@@ -36,7 +36,7 @@ dependency:
 
 and then replacing it with the following:
 
-{{< codeblock "pom.xml" "xml" "https://github.com/surevine/spring-rest-example/blob/master/pom.xml" >}}
+{{< codeblock "pom.xml" "xml" "https://github.com/pete-woods/spring-rest-example/blob/master/pom.xml" >}}
 <dependencies>
   ...
   <dependency>

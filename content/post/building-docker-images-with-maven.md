@@ -25,15 +25,15 @@ build phases to the default build phases, so that when you type
 `./mvnw package`, your Docker image will be built.
 
 # Dependencies
-To build the [source](https://github.com/surevine/spring-rest-example), you will
+To build the [source](https://github.com/pete-woods/spring-rest-example), you will
 need JDK 8+, and a [Docker installation](https://docs.docker.com/install/).
 
 # Dockerfile
 
-First create the [Dockerfile](https://github.com/surevine/spring-rest-example/blob/master/Dockerfile)
+First create the [Dockerfile](https://github.com/pete-woods/spring-rest-example/blob/master/Dockerfile)
 to construct our image, as below:
 
-{{< codeblock "Dockerfile" "Dockerfile" "https://github.com/surevine/spring-rest-example/blob/master/Dockerfile" >}}
+{{< codeblock "Dockerfile" "Dockerfile" "https://github.com/pete-woods/spring-rest-example/blob/master/Dockerfile" >}}
 FROM openjdk:jre-alpine
 VOLUME /tmp
 ARG JAR_FILE
@@ -73,7 +73,7 @@ times.
 
 Now we need to add a pair of properties to configure the image builder:
 
-{{< codeblock "pom.xml" "xml" "https://github.com/surevine/spring-rest-example/blob/master/pom.xml" >}}
+{{< codeblock "pom.xml" "xml" "https://github.com/pete-woods/spring-rest-example/blob/master/pom.xml" >}}
 <properties>
   ...
   <dockerfile.version>1.4.1</dockerfile.version>
@@ -89,7 +89,7 @@ There are only two interesting parts to this:
 2. The `dependencies` section, which makes this plugin work against later versions of 
    the JDK.
 
-{{< codeblock "pom.xml" "xml" "https://github.com/surevine/spring-rest-example/blob/master/pom.xml" >}}
+{{< codeblock "pom.xml" "xml" "https://github.com/pete-woods/spring-rest-example/blob/master/pom.xml" >}}
 <plugins>
   ...
   <plugin>

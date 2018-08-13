@@ -25,7 +25,7 @@ If you are not already familiar, there is good [documentation](https://docs.dock
 available.
 
 # Dependencies
-To build the [source](https://github.com/surevine/spring-rest-example), you will
+To build the [source](https://github.com/pete-woods/spring-rest-example), you will
 need JDK 8+, and a [Docker installation](https://docs.docker.com/install/).
 
 # What are we aiming for?
@@ -66,7 +66,7 @@ src="https://g.gravizo.com/svg? @startuml; [docker-compose.yml] as cf; [docker-c
 The database, cache and admin tools will be common between both production and
 development, so we create a shared `docker-compose.yml` as follows:
 
-{{< codeblock "docker-compose.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose.yml" >}}
+{{< codeblock "docker-compose.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose.yml" >}}
 version: '3.3'
 
 services:
@@ -103,7 +103,7 @@ The development file needs to expose the ports for the database and cache so
 that a locally run version of the application can access them. It also wires
 a development-specific volume to the database service.
 
-{{< codeblock "docker-compose-development.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose-development.yml" >}}
+{{< codeblock "docker-compose-development.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-development.yml" >}}
 version: '3.3'
 
 volumes:
@@ -146,7 +146,7 @@ volume to the database, that won't get mixed up with the development version.
 
 We would also like to use different passwords for development and production.
 
-{{< codeblock "docker-compose-production.yml" "yml" "https://github.com/surevine/spring-rest-example/blob/master/docker-compose-production.yml" >}}
+{{< codeblock "docker-compose-production.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-production.yml" >}}
 version: '3.3'
 
 volumes:

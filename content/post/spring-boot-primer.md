@@ -27,7 +27,7 @@ powered by [Micrometer](https://micrometer.io/).
 We're going use [Docker](https://www.docker.com/) to package up the application for deployment,
 and to orchestrate the various dependencies we have in our development pipeline.
 
-The source code for the project we will be building is available [here](https://github.com/surevine/spring-rest-example).
+The source code for the project we will be building is available [here](https://github.com/pete-woods/spring-rest-example).
 
 The topics we're going to cover are listed below.
 
