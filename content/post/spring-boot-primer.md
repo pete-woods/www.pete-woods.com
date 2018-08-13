@@ -44,7 +44,7 @@ and running with MariaDB and Redis effortlessly.
 Once we have our development environment up and running, we'll move over to talking about
 how we actually build the application using Spring Boot.
 
-- Spring as a Java container abstraction - switching to Undertow.
+- Spring as a Java container abstraction - switching to Undertow ([link]({{< relref "spring-as-a-java-container-abstraction.md" >}})).
 - Using `application.yml` as the interface to Docker compose.
 - OIDC (OAuth2) authentication with Spring Security JOSE and Google.
 - Using Swagger with SpringFox.
