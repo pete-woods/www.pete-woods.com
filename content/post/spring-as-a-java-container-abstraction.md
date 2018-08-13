@@ -57,5 +57,5 @@ and then replacing it with the following:
 </dependencies>
 {{< /codeblock >}}
 
-All this does is exlude Tomcat from the web starter, and lets you add
+All this does is exclude Tomcat from the web starter, and lets you add
 either Undertow or Jetty as an alternative Java web container.
