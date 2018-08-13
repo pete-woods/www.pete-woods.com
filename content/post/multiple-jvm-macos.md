@@ -5,10 +5,7 @@ categories:
   - development
 tags:
   - Java
-  - JVM
   - Brew
-  - Jenv
-  - OSX
   - macOS
 thumbnailImagePosition: left
 thumbnailImage: /images/coffee-thumbnail.jpg
