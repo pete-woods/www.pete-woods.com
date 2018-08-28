@@ -12,7 +12,7 @@ thumbnailImage: /images/undertow-thumbnail.jpg
 ---
 
 Spring MVC abstracts the Java servlet container implementation away from you
-almost completely, this allows you to migration from Tomcat quite easily.
+almost completely, this allows you to migrate from Tomcat quite easily.
 
 <!--more-->
 

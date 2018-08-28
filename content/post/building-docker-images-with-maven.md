@@ -62,7 +62,7 @@ is where the embedded application container stores its exploded contents to.
 
 We set up an environment variable `ENV _JAVA_OPTIONS` to configure the JVM to
 some sensible values for hosting a web service. The default values here can easily
-be overridded when composing this image later.
+be overridden when composing this image later.
 
 We add a user and group for the image, so that the application does not run as root.
 
