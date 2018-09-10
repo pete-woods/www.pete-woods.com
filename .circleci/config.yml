@@ -13,10 +13,10 @@ jobs:
       - run: git submodule update --init
       - run:
           name: Build
-          command: npm run build
+          command: HUGO_ENV=production hugo -v
       - run:
          name: Test
-         command: npm run test
+         command: 'true'
       - persist_to_workspace:
           root: .
           paths:
