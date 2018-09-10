@@ -5,7 +5,7 @@
   "dependencies": {},
   "scripts": {
     "build": "HUGO_ENV=production hugo -v",
-    "test": "true #htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore",
+    "test": "docker run -v $PWD/public/:/root/public cibuilds/hugo htmlproofer /root/public --allow-hash-href --check-html --empty-alt-ignore --url-ignore='#btn-open-shareoptions,https://www.linkedin.com/in/pete-woods'",
     "deploy": "firebase deploy --token=$FIREBASE_DEPLOY_TOKEN"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ date: 2017-04-20
 categories:
   - development
 tags:
-  - C++
+  - Cpp
   - glib
   - gobject
 thumbnailImagePosition: left

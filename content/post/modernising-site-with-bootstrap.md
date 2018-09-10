@@ -48,12 +48,12 @@ body {
 }
 {{< /codeblock >}}
 
-You can see the complete login page below, making use of this backgroud image.
+You can see the complete login page below, making use of this background image.
 
 {{< image classes="clear fancybox fig-100" src="/images/loc/login-new.png" thumbnail="/images/loc/login-new-thumbnail.png" title="New login screen">}}
 
 The old front end used HTTP BASIC authentication, so there was no login screen. The new site
-is based on Spring, using [Spring Security's](Find URL) CSRF protection. Therefore we need to
+is based on Spring, using [Spring Security's](https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html) CSRF protection. Therefore we need to
 include the CSRF as part of the login form. Normally this is done in your JSP using the Spring
 Security CSRF tag:
 
@@ -161,6 +161,7 @@ switching to Bootstrap-themed [tables](https://getbootstrap.com/docs/4.0/content
 {{< /codeblock >}}
 
 {{< image classes="fancybox fig-50" src="/images/loc/home-old.png" thumbnail="/images/loc/home-old-thumbnail.png" title="Old home screen" >}}
+
 {{< image classes="clear fancybox fig-50" src="/images/loc/home-new.png" thumbnail="/images/loc/home-new-thumbnail.png" title="New home screen" >}}
 
 
@@ -171,6 +172,7 @@ the table on small screens, for example. In addition to fixing the complex table
 tricks to simplify and clean up the layout of this screen.
 
 {{< image classes="fancybox fig-50" src="/images/loc/timesheets-old.png" thumbnail="/images/loc/timesheets-old-thumbnail.png" title="Old timesheet screen" >}}
+
 {{< image classes="clear fancybox fig-50" src="/images/loc/timesheets-new.png" thumbnail="/images/loc/timesheets-new-thumbnail.png" title="New timesheet screen" >}}
 
 * Move the timestamps into a tool-tip.
@@ -204,7 +206,9 @@ visible again for certain breakpoints with the combination of e.g. `d-none d-sm-
 in the following layouts.
 
 {{< image classes="fancybox fig-33" src="/images/loc/login-responsive.png" thumbnail="/images/loc/login-responsive-thumbnail.png" title="Responsive login screen">}}
+
 {{< image classes="fancybox fig-33" src="/images/loc/home-responsive.png" thumbnail="/images/loc/home-responsive-thumbnail.png" title="Responsive home screen">}}
+
 {{< image classes="clear fancybox fig-33" src="/images/loc/timesheets-responsive.png" thumbnail="/images/loc/timesheets-responsive-thumbnail.png" title="Responsive timesheet screen">}}
 
 # Search screen
@@ -214,7 +218,9 @@ The various serach screens in the app benefited from Bootstrap's
 these search screens is quite simple, but the improvement is significant. Again, the screens
 trivially become mobile-friendly because of Bootstrap.
 
+
 {{< image classes="fancybox fig-50" src="/images/loc/query-old.png" thumbnail="/images/loc/query-old-thumbnail.png" title="Old search screen" >}}
+
 {{< image classes="clear fancybox fig-50" src="/images/loc/query-new.png" thumbnail="/images/loc/query-new-thumbnail.png" title="New search screen" >}}
 
 # Summary
