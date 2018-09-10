@@ -1,0 +1,14 @@
+{
+  "name": "pete-woods.com",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "build": "HUGO_ENV=production hugo -v",
+    "test": "true #htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore",
+    "deploy": "firebase deploy --token=$FIREBASE_DEPLOY_TOKEN"
+  },
+  "devDependencies": {
+    "firebase-tools": "^4.2.1"
+  }
+}

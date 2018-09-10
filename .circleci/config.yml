@@ -12,17 +12,19 @@ jobs:
       - run: git submodule sync
       - run: git submodule update --init
       - run:
-          name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v
-      #- run:
-      #    name: "Test Website"
-      #    command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore
+          name: Build
+          command: npm run build
+      - run:
+         name: Test
+         command: npm run test
       - persist_to_workspace:
           root: .
           paths:
-            - public
-            - firebase.json
             - .firebaserc
+            - firebase.json
+            - package.json
+            - package-lock.json
+            - public
   deployment:
     <<: *defaults
     docker:
@@ -31,17 +33,17 @@ jobs:
       - attach_workspace:
           at: .
       - restore_cache: # special step to restore the dependency cache 
-          key: dependency-cache-firebase-tools
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: npm install firebase-tools
-          command: npm install firebase-tools
+          name: Install dependencies
+          command: npm i
       - save_cache: # special step to save the dependency cache
-          key: dependency-cache-firebase-tools
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
       - run:
-          name: Deploy to Firebase
-          command: ./node_modules/.bin/firebase deploy --token="$FIREBASE_DEPLOY_TOKEN"
+          name: Deploy
+          command: npm run deploy
 
 workflows:
   version: 2
