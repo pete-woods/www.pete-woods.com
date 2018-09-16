@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "build": "HUGO_ENV=production hugo -v",
-    "test": "docker run -v $PWD/public/:/root/public cibuilds/hugo htmlproofer /root/public --allow-hash-href --check-html --empty-alt-ignore --url-ignore='#btn-open-shareoptions,https://www.linkedin.com/in/pete-woods'",
+    "build": "HUGO_ENV=production hugo",
+    "test": "docker run -v $PWD/public/:/root/public cibuilds/hugo htmlproofer /root/public --allow-hash-href --check-html --empty-alt-ignore --url-ignore='#btn-open-shareoptions,https://www.linkedin.com/in/pete-woods' --internal-domains='pete-woods.com'",
     "deploy": "firebase deploy --token=$FIREBASE_DEPLOY_TOKEN"
   },
   "devDependencies": {

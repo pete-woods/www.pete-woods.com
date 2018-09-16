@@ -16,7 +16,7 @@ jobs:
           command: HUGO_ENV=production hugo -v
       - run:
          name: Test
-         command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --url-ignore='#btn-open-shareoptions,https://www.linkedin.com/in/pete-woods'
+         command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --url-ignore='#btn-open-shareoptions,https://www.linkedin.com/in/pete-woods' --internal-domains='pete-woods.com'
       - persist_to_workspace:
           root: .
           paths:
