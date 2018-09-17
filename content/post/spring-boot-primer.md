@@ -38,16 +38,16 @@ The topics we're going to cover are listed below.
 We'll start by talking about how we orchestrate the development environment, to get us up
 and running with MariaDB and Redis effortlessly.
 
-- Building Docker images with Spotify's Dockerfile Maven plugin ([link]({{< relref "building-docker-images-with-maven.md" >}})).
-- DRY principle with Docker compose ([link]({{< relref "composing-docker-compose-files.md" >}})).
+- [Building Docker images with Spotify's Dockerfile Maven plugin]({{< relref "building-docker-images-with-maven.md" >}}).
+- [DRY principle with Docker compose]({{< relref "composing-docker-compose-files.md" >}}).
 
 # Spring Boot
 
 Once we have our development environment up and running, we'll move over to talking about
 how we actually build the application using Spring Boot.
 
-- Spring as a Java container abstraction - switching to Undertow ([link]({{< relref "spring-as-a-java-container-abstraction.md" >}})).
-- Using `application.yml` as the interface to Docker compose.
+- [Spring as a Java container abstraction - switching to Undertow]({{< relref "spring-as-a-java-container-abstraction.md" >}}).
+- [Using `application.yml` as the interface to Docker compose]({{< relref "using-application.yml-as-the-interface-to-docker-compose.md" >}}).
 - OIDC (OAuth2) authentication with Spring Security JOSE and Google.
 - Using Swagger with SpringFox.
 - Spring Data JPA with:
