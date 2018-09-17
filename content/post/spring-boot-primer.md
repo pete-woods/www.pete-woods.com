@@ -17,7 +17,9 @@ Boot 2.0 to build and deploy a simple CRUD REST application.
 
 <!--more-->
 
+{{< alert info >}}
 This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
+{{< /alert >}}
 
 We're going to make use of modern Spring technologies such as [Spring Security Oauth2 JOSE](https://docs.spring.io/spring-security/site/docs/5.0.0.RELEASE/reference/htmlsingle/#spring-security-oauth2-jose),
 [Spring Cloud AWS](http://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html), and

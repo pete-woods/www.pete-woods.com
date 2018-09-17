@@ -16,7 +16,9 @@ almost completely, this allows you to migrate from Tomcat quite easily.
 
 <!--more-->
 
+{{< alert info >}}
 This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
+{{< /alert >}}
 
 Unless you have somehow tied yourself into Tomcat, perhaps by customising its
 configuration, or directly taking advantage of some Tomcat-specific feature,

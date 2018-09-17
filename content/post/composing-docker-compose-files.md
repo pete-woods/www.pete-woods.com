@@ -16,7 +16,9 @@ files.
 
 <!--more-->
 
+{{< alert info >}}
 This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
+{{< /alert >}}
 
 # Intended audience
 

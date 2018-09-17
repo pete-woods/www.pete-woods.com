@@ -18,7 +18,9 @@ build language for Docker images are `Dockerfile`s, so we will use
 
 <!--more-->
 
+{{< alert info >}}
 This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
+{{< /alert >}}
 
 To make packaging as simple as possible, we will bind the Maven plugin's
 build phases to the default build phases, so that when you type
