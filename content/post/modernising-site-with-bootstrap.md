@@ -53,7 +53,7 @@ You can see the complete login page below, making use of this background image.
 {{< image classes="clear fancybox fig-100" src="/images/loc/login-new.png" thumbnail="/images/loc/login-new-thumbnail.png" title="New login screen">}}
 
 The old front end used HTTP BASIC authentication, so there was no login screen. The new site
-is based on Spring, using [Spring Security's](https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html) CSRF protection. Therefore we need to
+is based on Spring, using [Spring Security's](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#csrf) CSRF protection. Therefore we need to
 include the CSRF as part of the login form. Normally this is done in your JSP using the Spring
 Security CSRF tag:
 

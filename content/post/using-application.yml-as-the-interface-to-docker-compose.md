@@ -50,5 +50,27 @@ configuration, you can also embed your development environment defaults, with th
 ${DB_PASSWORD:XfeCEtSOFL91QpeyDxQnkRattHWzufTdDB1Pn5iB4}
 ```
 
-At production-time, all of these properties can easily be set via your `docker-compose.yml` or (even better) pull out
-into a secure key store such as LastPass.
+At development-time (either running the app locally in your IDE / CLI or in Docker), you don't need to provide any additional
+configuration; making set-up for new developers on your team very rapid.
+
+At production-time, all of these properties can easily be set via your `docker-compose.yml`:
+{{< codeblock "docker-compose-production.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-production.yml" >}}
+services:
+  backend:
+    image: surevine/spring-rest-example:latest
+    environment:
+      DB_VENDOR: 'mariadb'
+      DB_ADDR: 'db'
+      DB_NAME: 'backend'
+      DB_USER: 'backend'
+      DB_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
+      DB_DRIVER: 'org.mariadb.jdbc.Driver'
+      SESSION_HOST: 'cache'
+      SESSION_PASSWORD:
+      SESSION_PORT: 6379
+      MEDIA_LOCATION: 'file:/var/lib/data/'
+    ports:
+      - '8080:8080'
+{{< /codeblock >}}
+
+or (even better) pull out into a secure key store such as [LastPass](https://www.lastpass.com/).
