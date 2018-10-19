@@ -25,8 +25,6 @@ This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer)
 
 To avoid littering your code with environment variable names, and allow you to configure the common Spring Boot properties it's simply a matter of using variable interpolation in your `application.yml` or `application.properties`.
 
-Hello!
-
 {{< codeblock "application.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/src/main/resources/application.yml" >}}
 spring:
 
