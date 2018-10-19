@@ -25,7 +25,7 @@ If you're used to modern languages that manage memory automatically, using these
 
 # Doing it the hard way
 
-Below is an example of using the [GKeyFile](https://developer.gnome.org/glib/stable/glib-Key-value-file-parser.html) type in the traditional C-style way.
+Below is an example of using the GKeyFile type in the traditional C-style way.
 
 Although this is an intentionally trivial example, even here there are several places where it's possible to forget to free resources.
 
