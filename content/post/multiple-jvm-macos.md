@@ -29,13 +29,17 @@ Now you can see multiple versions of the Java cask:
 
 ~~~ sh
 $ brew search java
-==> Exact Match
-java ✔
-==> Partial Matches
-charles-applejava                           eclipse-java
-java-jdk-javadoc                            java6
-java8                                       netbeans-java-ee
-netbeans-java-se                            yourkit-java-profiler
+==> Formulae
+app-engine-java       javarepl              libreadline-java
+google-java-format    jslint4java
+
+==> Casks
+charles-applejava                java8
+eclipse-java                     netbeans-java-ee
+eclipse-javascript               netbeans-java-se
+java ✔                           oracle-jdk-javadoc
+java-beta                        yourkit-java-profiler
+java6
 ~~~
 
 # Install desired Java versions
