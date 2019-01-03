@@ -28,7 +28,7 @@ $ brew tap caskroom/versions
 Now you can see multiple versions of the Java cask:
 
 ~~~ sh
-$ brew cask search java
+$ brew search java
 ==> Exact Match
 java ✔
 ==> Partial Matches
