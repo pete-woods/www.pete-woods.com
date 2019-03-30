@@ -56,20 +56,38 @@ At production-time, all of these properties can easily be set via your `docker-c
 {{< codeblock "docker-compose-production.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-production.yml" >}}
 services:
   backend:
-    image: surevine/spring-rest-example:latest
+    image: petewoods/spring-rest-example:latest
+    deploy:
+      replicas: 2
+    volumes:
+      - backend-data:/var/lib/data
     environment:
       DB_VENDOR: 'mariadb'
       DB_ADDR: 'db'
       DB_NAME: 'backend'
       DB_USER: 'backend'
-      DB_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
+      DB_PASSWORD: "${MYSQL_PASSWORD}"
       DB_DRIVER: 'org.mariadb.jdbc.Driver'
       SESSION_HOST: 'cache'
       SESSION_PASSWORD:
       SESSION_PORT: 6379
       MEDIA_LOCATION: 'file:/var/lib/data/'
+      GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID}"
+      GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET}"
+      # AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      # AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      # CLOUDWATCH_METRICS_ENABLED: 'true'
+      # CLOUDWATCH_METRICS_NAMESPACE: 'production-spring-rest-example'
+      # MEDIA_LOCATION: 's3://my-bucket'
     ports:
       - '8080:8080'
 {{< /codeblock >}}
 
-or (even better) pull out into a secure key store such as [LastPass](https://www.lastpass.com/).
+then you can move your configuration in an environment file, and run as follows:
+
+```
+(. production.env && docker stack deploy --prune -c docker-compose.yml -c docker-compose-production.yml spring-rest-example)
+```
+
+or (even better) pull out into a secure key store such as [LastPass](https://www.lastpass.com/), and interpolate in
+using something like LastPass CLI.

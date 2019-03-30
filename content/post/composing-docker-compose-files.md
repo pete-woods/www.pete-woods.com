@@ -69,7 +69,7 @@ The database, cache and admin tools will be common between both production and
 development, so we create a shared `docker-compose.yml` as follows:
 
 {{< codeblock "docker-compose.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose.yml" >}}
-version: '3.3'
+version: '3.6'
 
 services:
   db:
@@ -87,8 +87,6 @@ services:
       - '8081:8080'
     environment:
       ADMINER_DEFAULT_SERVER: db
-    depends_on:
-      - db
 
   cache:
     image: redis:alpine
@@ -106,7 +104,7 @@ that a locally run version of the application can access them. It also wires
 a development-specific volume to the database service.
 
 {{< codeblock "docker-compose-development.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-development.yml" >}}
-version: '3.3'
+version: '3.6'
 
 volumes:
   db-data-development:
@@ -132,7 +130,7 @@ services:
 To run up the development environment:
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose-development.yml up
+docker stack deploy --prune -c docker-compose.yml -c docker-compose-development.yml spring-rest-example
 ```
 
 Then start the Spring Boot application in your IDE, or with the command:
@@ -149,7 +147,7 @@ volume to the database, that won't get mixed up with the development version.
 We would also like to use different passwords for development and production.
 
 {{< codeblock "docker-compose-production.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/docker-compose-production.yml" >}}
-version: '3.3'
+version: '3.6'
 
 volumes:
   backend-data:
@@ -162,13 +160,13 @@ services:
     volumes:
       - db-data-production:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: '3773Ir5oYOPuIwiJ3yylytG5kvRhOUYQafAVkTNBE'
-      MYSQL_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
-
-  cache:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
 
   backend:
-    image: surevine/spring-rest-example:latest
+    image: petewoods/spring-rest-example:latest
+    deploy:
+      replicas: 2
     volumes:
       - backend-data:/var/lib/data
     environment:
@@ -176,17 +174,21 @@ services:
       DB_ADDR: 'db'
       DB_NAME: 'backend'
       DB_USER: 'backend'
-      DB_PASSWORD: 'WVn1X9JAZixu7bOCfITFSQyfru4wtRdqztf9PHE3s'
+      DB_PASSWORD: "${MYSQL_PASSWORD}"
       DB_DRIVER: 'org.mariadb.jdbc.Driver'
       SESSION_HOST: 'cache'
       SESSION_PASSWORD:
       SESSION_PORT: 6379
       MEDIA_LOCATION: 'file:/var/lib/data/'
+      GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID}"
+      GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET}"
+      # AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      # AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      # CLOUDWATCH_METRICS_ENABLED: 'true'
+      # CLOUDWATCH_METRICS_NAMESPACE: 'production-spring-rest-example'
+      # MEDIA_LOCATION: 's3://my-bucket'
     ports:
       - '8080:8080'
-    depends_on:
-      - db
-      - cache
 {{< /codeblock >}}
 
 ## Running
@@ -194,11 +196,11 @@ services:
 To run up the production environment, we first need to build the image:
 
 ```
-./mvnw package
+docker build -t petewoods/spring-rest-example .
 ```
 
-Then we can run `docker-compose`:
+Then we can run `docker stack deploy`:
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose-production.yml up
+(. production.env && docker stack deploy --prune -c docker-compose.yml -c docker-compose-production.yml spring-rest-example)
 ```
