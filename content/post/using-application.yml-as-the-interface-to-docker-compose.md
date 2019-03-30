@@ -13,9 +13,9 @@ thumbnailImage: /images/jigsaw-thumbnail.jpg
 ---
 
 Modern containerised [12 factor](https://12factor.net/) applications are expected to derive their configuration from environment variables.
-While Spring Boot [does import](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) some of
-its properties from environment variables, it doesn't for most of its
-[common properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).
+While Spring Boot [does import](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) its
+[common properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html) from environment variables,
+sometimes you need to interpolate several variables together, e.g. to form a URL.
 
 <!--more-->
 
@@ -23,7 +23,8 @@ its properties from environment variables, it doesn't for most of its
 This post is part of the "Spring Boot Primer" [series](/tags/spring-boot-primer).
 {{< /alert >}}
 
-To avoid littering your code with environment variable names, and allow you to configure the common Spring Boot properties it's simply a matter of using variable interpolation in your `application.yml` or `application.properties`.
+Rather than littering your code with environment variables, simple variable interpolation in your `application.yml` or `application.properties`
+can be used. You can also override the default values for built-in common properties this way:
 
 {{< codeblock "application.yml" "yml" "https://github.com/pete-woods/spring-rest-example/blob/master/src/main/resources/application.yml" >}}
 spring:
