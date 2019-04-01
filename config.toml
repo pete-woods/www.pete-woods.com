@@ -18,8 +18,8 @@ canonifyurls = true
 
 [author]
   name = "Pete Woods"
-  bio = "Full stack software engineer"
-  job = "Software Engineer at Surevine Ltd."
+  bio = "[Remote] Java/C++ Engineer into DevOps, universally interested in technology"
+  job = "Lead Engineer at Surevine Ltd."
   location = "Lancaster, UK"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
   gravatarEmail = "email@pete-woods.com"
