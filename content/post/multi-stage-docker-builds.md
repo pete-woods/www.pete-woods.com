@@ -140,7 +140,7 @@ Remember to change the last time to your own main class.
 # Static analysis
 
 Always recommended is static analysis of your code, so let's enable SonarQube in
-our builds. The Spring Boot start parent already includes Sonar in its plugin
+our builds. The Spring Boot starter parent already includes Sonar in its plugin
 dependencies, so all we need to do is invoke the right Maven goal with the right
 configuration.
 
@@ -193,7 +193,7 @@ FROM gcr.io/distroless/java:11
 
 
 {{< alert warning >}}
-Don't use the shell form for `ENTRYPOINT` - it won't work.
+Remember to use the JSON form for `ENTRYPOINT ["/app/myapp"]`, or it won't work.
 {{< /alert >}}
 
 ## Non-root user
