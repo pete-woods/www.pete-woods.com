@@ -47,7 +47,7 @@ The key things to note are:
    image, as we have no compilation tools, (and later on not even a shell).
 
 {{< alert warning >}}
-At the moment, unfortunately, this `Dockerfile` is still quite naive, and a full
+At the moment this `Dockerfile` is still quite naive, and a full
 download of all our dependencies will occur each time we run the build.
 {{< /alert >}}
 
@@ -134,7 +134,7 @@ first, and our own classes last.
 {{< /alert >}}
 
 {{< alert warning >}}
-Remember to change the last time to your own main class.
+Remember to change the last line to your own main class.
 {{< /alert >}}
 
 # Static analysis
@@ -193,7 +193,7 @@ FROM gcr.io/distroless/java:11
 
 
 {{< alert warning >}}
-Remember to use the JSON form for `ENTRYPOINT ["/app/myapp"]`, or it won't work.
+Remember to use the JSON form for `ENTRYPOINT ["/app/myapp"]` or it won't work.
 {{< /alert >}}
 
 ## Non-root user
