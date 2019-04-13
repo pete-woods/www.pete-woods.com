@@ -48,9 +48,12 @@ jobs:
 workflows:
   version: 2
 
-  btd:
+  pipeline:
     jobs:
       - build
       - deployment:
           requires:
             - build
+          filters:
+            branches:
+              only: master
