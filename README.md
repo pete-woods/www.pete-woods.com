@@ -1,6 +1,5 @@
-# Pete Woods's Blog
+# Pete Woods' Blog
 
-My blog. Built using Hugo, tested with htmlproofer, deployed with CircleCI.
+Build: [![CircleCI](https://circleci.com/gh/pete-woods/pete-woods.com.svg?style=svg)](https://circleci.com/gh/pete-woods/pete-woods.com)
 
-Build status: [![CircleCI](https://circleci.com/gh/pete-woods/pete-woods.com.svg?style=svg)](https://circleci.com/gh/pete-woods/pete-woods.com)
-
+My [blog](https://pete-woods.com). Built using Hugo, tested with htmlproofer, deployed with CircleCI.
