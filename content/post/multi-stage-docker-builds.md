@@ -266,9 +266,9 @@ Remember to use the JSON form: `HEALTHCHECK CMD ["/app/healthcheck"]`
 {{< /alert >}}
 
 
-# JVM container memory stuffs for Java 11+
+# JVM container memory support for Java 11+
 
-Since Java 11, the JRE has support for knowing about the container resource limits
+Since Java 11, the JVM has support for knowing about the container resource limits
 without any special extra configuration. This means we can simply set the flag
 `-XX:MaxRAMPercentage=90`, and not need to do any complex calculations about the
 other memory our application will use besides the heap.
