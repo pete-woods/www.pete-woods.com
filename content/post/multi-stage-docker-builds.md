@@ -13,7 +13,7 @@ thumbnailImagePosition: left
 thumbnailImage: /images/bricks-thumbnail.jpg
 ---
 
-There are plenty examples of basic Dockerfile based builds out there, but a production
+There are plenty of examples of basic Dockerfile based builds out there, but a production
 application requires a bunch of different things, such as reproducibility, hardening,
 health checks, static analysis - and ideally still be quick to build.
 
@@ -21,7 +21,7 @@ health checks, static analysis - and ideally still be quick to build.
 
 # Multi-stage Docker builds
 
-Being able to build you software in exactly the same way as your CI system is highly
+Being able to build your software in exactly the same way as your CI system is highly
 desirable. No-one wants their dev cycle to involve CI, no-matter how quick it is.
 Multi-stage Docker builds are a great way to achieve this.
 
